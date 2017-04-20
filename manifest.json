@@ -15,7 +15,7 @@
         "matches": [
             "http://www.gzjponline.com/Jp/BookOnline"
         ],
-        "js": ["select.js"]
+        "js": ["jquery-1.9.1.min.js","select.js"]
     }, {
         "matches": [
             "http://www.gzjponline.com/Jp/Booking/*"
