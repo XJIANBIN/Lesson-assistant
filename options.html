@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>填写信息</title>
+    <style>
+    body {
+        background: #c1bdba;
+        margin: 0;
+        display: block;
+    }
+    
+    .form {
+        background: rgba(19, 35, 47, 0.9);
+        padding: 40px;
+        max-width: 600px;
+        margin: 20px auto;
+        border-radius: 4px;
+        box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 40px 0;
+        display: block;
+    }
+    
+    li {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .tab-content {
+        margin-bottom: 15px;
+    }
+    
+    .tab-group .active a {
+        background: #1ab188;
+        color: #ffffff;
+    }
+    
+    .tab-group li a {
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        background: rgba(160, 179, 176, 0.25);
+        color: #a0b3b0;
+        font-size: 20px;
+        float: left;
+        width: 50%;
+        text-align: center;
+        cursor: pointer;
+        -webkit-transition: .5s ease;
+        transition: .5s ease;
+    }
+    
+    label {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+        left: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        -webkit-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+        -webkit-backface-visibility: hidden;
+        pointer-events: none;
+        font-size: 22px;
+    }
+    
+    input,
+    textarea {
+        display: inline-block;
+        font-size: 22px;
+        width: -moz-calc(100% - 120px);
+        width: -webkit-calc(100% - 120px);
+        width: calc(100% - 120px);
+        padding: 5px 10px;
+        background: none;
+        background-image: none;
+        border: 1px solid #a0b3b0;
+        color: #ffffff;
+        border-radius: 0;
+        -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+        transition: border-color .25s ease, box-shadow .25s ease;
+        position: absolute;
+        right: 2px;
+    }
+    
+    .field-wrap {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    #save,
+    #delete {
+        display: inline-block;
+        width: 49%;
+        border: 0;
+        outline: none;
+        border-radius: 0;
+        padding: 15px 0;
+        font-size: 2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        background: #1ab188;
+        color: #ffffff;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        -webkit-appearance: none;
+    }
+    
+    label .req {
+        margin-top: 5px;
+        color: #1ab188;
+    }
+    
+    .tip {
+        font-size: 12px;
+        color: #f101b0;
+    }
+    
+    #getNum {
+        font-size: 12px;
+        display: block;
+        margin: 0 auto;
+        color: #def14e;
+        text-align: center;
+    }
+    
+    #Number {
+        font-size: 24px;
+    }
+    
+    .btn {
+        border: none;
+        border-radius: 2px;
+        position: relative;
+        padding: 8px 30px;
+        margin: 10px 1px;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        will-change: box-shadow, transform;
+        transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        text-decoration: none;
+        background: transparent;
+        display: inline-block;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        touch-action: manipulation;
+    }
+    
+    .btn.btn-default {
+        background-color: #EEEEEE;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    
+    .btn.btn-primary {
+        background-color: #009688;
+        color: rgba(255, 255, 255, 0.84);
+    }
+    
+    .btn.btn-success {
+        background-color: #4caf50;
+        color: rgba(255, 255, 255, 0.84);
+    }
+    
+    .btn.btn-info {
+        background-color: #03a9f4;
+        color: rgba(255, 255, 255, 0.84);
+    }
+    
+    .btn.btn-warning {
+        background-color: #ff5722;
+        color: rgba(255, 255, 255, 0.84);
+    }
+    
+    .btn.btn.btn-danger {
+        background-color: #f44336;
+        color: rgba(255, 255, 255, 0.84);
+    }
+    
+    .btn.btn-raised:not(.btn-link).active {
+        box-shadow: 0 8px 35px 0 rgba(255, 255, 255, 0.14), 0 1px 10px 0 rgba(255, 255, 255, 0.12), 0 2px 4px -1px rgba(255, 255, 255, 0.2);
+    }
+    .tab_Position{
+       text-align: center;
+    }
+    </style>
+    }
+</head>
+
+<body>
+    <div class="form">
+        <ul class="tab-group">
+            <li class="tab active"><a href="#">填写个人信息</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="field-wrap">
+                <label class="">
+                    姓名<span class="req">*</span>:</label>
+                <input id="name" type="text" value="">
+            </div>
+            <div class="field-wrap">
+                <label class="control-label pcs_label">
+                    身份证<span class="req">*</span>:</label>
+                <input id="myId" type="text" value="">
+            </div>
+            <div class="field-wrap">
+                <label class="control-label pcs_label">
+                    电话<span class="req">*</span>:</label>
+                <input id="mobile" type="text" value="">
+            </div>
+            <div class="field-wrap">
+                <label class="control-label pcs_label">
+                    地点(全)<span class="req">*</span>:</label>
+                <input id="area" type="text" value="">
+            </div>
+            <div class="tab_Position">
+                <a href="#" class="btn btn-raised btn-primary">(天河区龙洞)1室<div class="ripple-container"></div></a>
+                <a href="#" class="btn btn-raised btn-success">(天河区龙洞)2室<div class="ripple-container"></div></a>
+                <a href="#" class="btn btn-raised btn-info">(白云区广园新村)1室<div class="ripple-container"></div></a>
+                <a href="#" class="btn btn-raised btn-warning">(海珠区革新路)1室<div class="ripple-container"></div></a>
+                <a href="#" class="btn btn-raised btn-danger">(海珠区革新路)2室<div class="ripple-container"></div></a>
+                <a href="#" class="btn btn-raised btn-default active">(荔湾区塞坝路)1室<div class="ripple-container"></div></a>
+                <a href="#" class="btn btn-raised btn-default active">(荔湾区塞坝路)2室<div class="ripple-container"></div></a>
+                <a href="#" class="btn btn-raised btn-primary">(黄埔区长洲岛)1室<div class="ripple-container"></div></a>
+                <a href="#" class="btn btn-raised btn-success">(天河区东莞庄)1室<div class="ripple-container"></div></a>
+            </div>
+            <div class="field-wrap">
+                <label class="control-label pcs_label">
+                    密钥<span class="req"></span>:</label>
+                <input id="appId" type="text" value="">
+            </div>
+            <button id="save">保存</button>
+            <button id="delete">清除</button>
+        </div>
+        <span class="tip">温馨提示：</span>
+        <p class="tip">1.地点需写全名，参考官网，支持多地点，地点间用英文逗号隔开。如果下方选择没有官网地点，请手动添加。</p>
+        <p class="tip">2.为保障您的个人信息，当卸载插件时需点击以上清除按钮。</p>
+        <p id="getNum">欢迎使用约课小助手，您是第&nbsp&nbsp<span id="Number" class="tip"></span>&nbsp&nbsp位使用小助手哟！</p>
+    </div>
+    <script src="options.js"></script>
+</body>
+
+</html>

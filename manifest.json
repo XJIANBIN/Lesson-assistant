@@ -1,0 +1,47 @@
+﻿{
+    "name": "约课小助手",
+    "manifest_version": 2,
+    "version": "1.0",
+    "description": "约课小助手",
+	"icons": {
+	"16": "images/1.png",
+	"128":"images/my.png"
+	},
+    "browser_action": {
+        "default_icon": "images/1.png",
+        "default_popup": "iconTip.html"
+    },
+    "content_scripts": [{
+        "matches": [
+            "http://www.gzjponline.com/Jp/BookOnline"
+        ],
+        "js": ["jquery-1.9.1.min.js","select.js"]
+    }, {
+        "matches": [
+            "http://www.gzjponline.com/Jp/Booking/*"
+        ],
+        "js": ["writeInfo.js"]
+    }, {
+        "matches": [
+            "http://www.gzjponline.com/Account/LogIn"
+        ],
+        "js": ["login.js"]
+    }, {
+        "matches": [
+            "http://www.gzjponline.com/Jp/BookQuery"
+        ],
+        "js": ["query.js"]
+    },{
+        "matches": [
+            "http://139.159.209.124/wlxx/portal/index/index.html"
+        ],
+        "js": ["jquery-1.9.1.min.js","autoWatch.js"]
+    }],
+    "permissions": [
+        "http://*/*",
+        "https://*/*",
+        "notifications",
+        "storage"
+    ],
+    "options_page": "options.html"
+}
