@@ -1,4 +1,4 @@
-(function() {
+$("#I2").load(function() {
 	var table =document.getElementById('I2').contentWindow.document.getElementById('step1');
     var course = table.getElementsByTagName('tr'); 
    Array.prototype.forEach.call(course,function(elements,index,array) {
@@ -7,7 +7,7 @@
 	 $($(elements).find('.buttonClass')[0]).click();
    }
   });
-})();
+})
 function getByClass(clsName, parent){
     var oCls=parent.getElementsByTagName('*')//获取所有的标签元素
     var arr=[];
@@ -18,5 +18,4 @@ function getByClass(clsName, parent){
         }
     }
 }
-
 
